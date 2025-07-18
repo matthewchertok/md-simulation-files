@@ -4,7 +4,7 @@ This directory contains example LAMMPS simulation input scripts for the paper [W
 Scripts for three distinct types of simulations are contained within the [example_lammps_scripts](/2025-idp-psp/example_lammps_scripts) directory: single chain simulations for calculating the radius of gyration, adaptive biasing force simulations for calculating the second virial coefficient, and 100 chain simulations used to compute an approximate pressure-density equation-of-state.
 All files are for simulations of an example IDP given by the amino acid sequence EQEFSDNELQELSTQGSRYV.
 View the [list of all sequences](https://g-ef94ef.f0ad1.36fe.data.globus.org/10.34770/6tnm-7b56/390/seq_heteromeric.txt) used in the study.
-Force field parameters are based off of work by [Regy et al.](https://doi.org/10.1002/pro.4094)
+Force field parameters contained within the sys.settings files are based off of work by [Regy et al.](https://doi.org/10.1002/pro.4094)
 
 
 ### Single chain simulations
