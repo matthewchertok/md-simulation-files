@@ -1,0 +1,81 @@
+# VARIABLES
+variable        data_name      index 	sys.data
+variable        settings_name  index    sys.settings
+variable        nsteps         index    500000000	  # number of data steps
+variable        coords_freq    index    100000
+variable        Tinit          index    300
+variable        T0             index    300
+variable        Tf             index    300
+variable        Tdamp      index    1000
+variable vseed1 index 20864011 
+
+#===========================================================
+# GENERAL PROCEDURES
+#===========================================================
+units		real	# m = grams/mole, x = Angstroms, E = kcal/mole
+dimension	3	# 3 dimensional simulation
+newton		on	# use Newton's 3rd law
+boundary	p p p	# shrink wrap conditions 
+atom_style	full    # molecular + charge
+neighbor 3.5 multi
+neigh_modify every 1 delay 0 
+
+
+#===========================================================
+# FORCE FIELD DEFINITION
+#===========================================================
+pair_style     ljlambda 0.1 0.0 35.0 # figure out the parameters force field through looking at mittals literature
+bond_style     hybrid harmonic
+special_bonds  fene
+angle_style    none
+dihedral_style none
+kspace_style   none
+improper_style none                 # no impropers
+dielectric 80
+
+#===========================================================
+# SETUP SIMULATIONS
+#===========================================================
+read_data ${data_name} 
+include ${settings_name}
+
+change_box all x final 0.0 300.0
+change_box all y final 0.0 300.0
+change_box all z final 0.0 300.0
+
+
+# SET RUN PARAMETERS
+comm_style tiled
+timestep   10
+run_style	verlet 		# Velocity-Verlet integrator
+
+
+# DECLARE RELEVANT OUTPUT VARIABLES
+variable        my_step   equal   step
+variable        my_temp   equal   temp
+variable        my_rho    equal   density
+variable        my_pe     equal   pe
+variable        my_ke     equal   ke
+variable        my_etot   equal   etotal
+variable        my_ent    equal   enthalpy
+variable        my_P      equal   press
+variable        my_vol    equal   vol
+
+#===========================================================
+# RUN DYNAMICS
+#===========================================================
+minimize 1.0e-4 1.0e-6 5000 50000000
+velocity all create ${Tinit} ${vseed1} mom yes rot yes
+fix 2 all nve/limit 1.0
+fix dynamics all langevin ${T0} ${Tf} ${Tdamp} ${vseed1} 
+fix abf all colvars colvars.inp tstat dynamics        
+
+#===========================================================
+# SET OUTPUTS
+#===========================================================
+fix  averages all ave/time 10000 1 10000 v_my_temp v_my_etot v_my_pe v_my_ke v_my_ent v_my_P v_my_rho file thermo.avg
+dump crds all dcd ${coords_freq} coords.dcd
+
+run             ${nsteps}
+write_data      end.data pair ij
+unfix abf
