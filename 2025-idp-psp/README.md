@@ -5,11 +5,33 @@ Scripts for three distinct types of simulations are contained within [example_la
 All files are for simulations of a single example IDP sequence, EQEFSDNELQELSTQGSRYV.
 View the [list of all sequences](https://g-ef94ef.f0ad1.36fe.data.globus.org/10.34770/6tnm-7b56/390/seq_heteromeric.txt).
 
+
 ## Single chain simulations
 
-The single chain scripts can be found within the [rg_scripts](/2025-idp-psp/example_lammps_scripts/rg_scripts) directory contained within example_lammps_scripts. 
-Several files can be found within:
+The single chain simulation scripts can be found within the [rg_scripts](/2025-idp-psp/example_lammps_scripts/rg_scripts) directory contained within example_lammps_scripts. 
+The files are:
 
-- **start.lmp** --- This file contains general LAMMPS instructions
+- **start.lmp** --- This file contains general LAMMPS instructions and utilizes information from sys.data and sys.settings
 - **sys.data** --- This file contains the simulation starting configuration
-- **sys.settings** --- This file contains the force field settings
+- **sys.settings** --- This file contains the force field settings including non-bonded and bonded interactions
+
+
+## Adaptive biasing force simulations
+
+The adaptive biasing force simulation scripts can be found within the [b2_scripts](/2025-idp-psp/example_lammps_scripts/b2_scripts) directory contained within example_lammps_scripts. 
+The files are:
+
+- **colvars.inp** -- This file contains instructions to run the adaptive biasing force portion of the simulation
+- **start.lmp** --- This file contains general LAMMPS instructions and utilizes information from colvars.inp, sys.data, and sys.settings
+- **sys.data** --- This file contains the simulation starting configuration
+- **sys.settings** --- This file contains the force field settings including non-bonded and bonded interactions
+
+
+## Equation-of-state simulations
+
+The equation-of-state simulation scripts can be found within the [b2_scripts](/2025-idp-psp/example_lammps_scripts/eos_scripts) directory contained within example_lammps_scripts. 
+The files are:
+
+- **start.lmp** --- This file contains general LAMMPS instructions and utilizes information from sys.data and sys.settings
+- **sys.data** --- This file contains the simulation starting configuration. Note that the box dimensions for this simulation are set to reflect a density of 0.05 g/mL
+- **sys.settings** --- This file contains the force field settings including non-bonded and bonded interactions
