@@ -29,7 +29,7 @@ The files are:
 
 ### Equation-of-state simulations
 
-The equation-of-state simulation scripts can be found within the [b2_scripts](/2025-idp-psp/example_lammps_scripts/eos_scripts) directory contained within example_lammps_scripts. 
+The equation-of-state simulation scripts can be found within the [eos_scripts](/2025-idp-psp/example_lammps_scripts/eos_scripts) directory contained within example_lammps_scripts. 
 The files are:
 
 - **start.lmp** --- This file contains general LAMMPS instructions and utilizes information from sys.data and sys.settings
