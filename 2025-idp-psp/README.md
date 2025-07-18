@@ -6,7 +6,7 @@ All files are for simulations of a single example IDP sequence, EQEFSDNELQELSTQG
 View the [list of all sequences](https://g-ef94ef.f0ad1.36fe.data.globus.org/10.34770/6tnm-7b56/390/seq_heteromeric.txt).
 
 
-# Single chain simulations
+### Single chain simulations
 
 The single chain simulation scripts can be found within the [rg_scripts](/2025-idp-psp/example_lammps_scripts/rg_scripts) directory contained within example_lammps_scripts. 
 The files are:
@@ -16,7 +16,7 @@ The files are:
 - **sys.settings** --- This file contains the force field settings including non-bonded and bonded interactions
 
 
-# Adaptive biasing force simulations
+### Adaptive biasing force simulations
 
 The adaptive biasing force simulation scripts can be found within the [b2_scripts](/2025-idp-psp/example_lammps_scripts/b2_scripts) directory contained within example_lammps_scripts. 
 The files are:
@@ -27,7 +27,7 @@ The files are:
 - **sys.settings** --- This file contains the force field settings including non-bonded and bonded interactions
 
 
-# Equation-of-state simulations
+### Equation-of-state simulations
 
 The equation-of-state simulation scripts can be found within the [b2_scripts](/2025-idp-psp/example_lammps_scripts/eos_scripts) directory contained within example_lammps_scripts. 
 The files are:
