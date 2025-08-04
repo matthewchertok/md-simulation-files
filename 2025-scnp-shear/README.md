@@ -4,6 +4,29 @@
 
 This repository provides all scripts required to replicate the molecular‑dynamics (MD) simulations reported in the paper cited above.
 
+## Prerequisites
+
+The code has been tested with the libraries listed below. Earlier versions may work, but **HOOMD 4.9 or newer is strongly recommended**.
+
+| Package | Minimum Version | PyPI / Conda‑Forge name |
+|---------|----------------|-------------------------|
+| HOOMD‑blue | 4.9.1 | `hoomd` |
+| GSD | 3.4.2 | `gsd` |
+| Freud | 3.1.0 | `freud‑analysis` |
+| PyTorch | 2.7.1 | `torch` |
+
+Install via Conda (preferred) or pip:
+
+```bash
+# Conda
+conda install -c conda-forge hoomd gsd freud-analysis
+
+# or, with pip
+pip install hoomd gsd freud-analysis
+```
+
+GPU support for HOOMD is optional but recommended for large systems (see the HOOMD documentation).
+
 ---
 
 ## 1. Workflow Overview
