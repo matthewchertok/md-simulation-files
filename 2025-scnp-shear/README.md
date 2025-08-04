@@ -12,7 +12,7 @@ The code has been tested with the libraries listed below. Earlier versions may w
 |---------|----------------|-------------------------|
 | HOOMD‑blue | 4.9.1 | `hoomd` |
 | GSD | 3.4.2 | `gsd` |
-| Freud | 3.1.0 | `freud‑analysis` |
+| Freud | 3.1.0 | `freud` |
 | PyTorch | 2.7.1 | `torch` |
 
 Install via Conda (preferred) or pip:
