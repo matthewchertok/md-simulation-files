@@ -49,7 +49,7 @@ sbatch job_gen_seed_conformations.slurm
 | Chain length *N* | 50, 100, 150 |
 
 *Plate separation* = `max(100, N)`  
-*Shear rate* = $\dfrac{2 v_x}{\text{plate separation}}$ (plates move at $\pm v_x$).
+*Shear rate*: $\dot{\gamma} = \dfrac{2 v_x}{\text{plate separation}}$ (plates move at $\pm v_x$).
 
 ---
 
