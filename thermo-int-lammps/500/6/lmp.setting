@@ -1,0 +1,9 @@
+# ~~~~~BONDS~~~~~
+# bond_coeff type k(kcal/mol/ang**2)  r0 (ang)
+bond_coeff  1  600.000  1.000
+bond_coeff  2  600.000  1.000
+
+# ~~~~~ANGLES~~~~~
+# angle_coeff type k(kcal/mol/rad**2)  theta_0 (degrees)
+angle_coeff  1   75.000 109.470
+angle_coeff  2   75.000 109.470

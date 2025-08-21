@@ -1,0 +1,89 @@
+#CXE2
+variable    lambda1  index   0.00922
+variable    lambda2  index   0.04794
+variable    lambda3  index   0.11505
+variable    lambda4  index   0.20634
+variable    lambda5  index   0.31608
+variable    lambda6  index   0.43738
+variable    lambda7  index   0.56262
+variable    lambda8  index   0.68392
+variable    lambda9  index   0.79366
+variable    lambda10  index   0.88495
+variable    lambda11  index   0.95206
+variable    lambda12  index   0.99078
+
+variable    lambda00  equal   ${lambda9}
+variable    q10 equal -0.8476*v_lambda00
+variable    q20 equal  0.4238*v_lambda00
+variable    lambda01  equal   (v_lambda00-0.002)
+variable    q11 equal -0.8476*v_lambda01
+variable    q21 equal  0.4238*v_lambda01
+variable    lambda02  equal   (v_lambda00+0.002)
+variable    q12 equal -0.8476*v_lambda02
+variable    q22 equal  0.4238*v_lambda02
+
+atom_style	full
+units		real
+dimension	3
+boundary	p p p
+bond_style     	harmonic
+angle_style    	harmonic
+
+pair_style      hybrid &
+    lj/cut/coul/long 10.0 &
+    lj/cut/coul/long/soft 1 0.5 10.0 10.0
+pair_modify     shift yes mix geometric
+
+kspace_style   	pppm 1e-5
+ 
+read_data   lmp.data
+include     lmp.setting
+
+set         type 3 charge ${q10}
+set         type 4 charge ${q20}
+
+pair_coeff  1   1   lj/cut/coul/long   0.1553500  3.16600
+pair_coeff  2   2   lj/cut/coul/long   0.0000000  1.00000
+pair_coeff  3   3   lj/cut/coul/long   0.1553500  3.16600
+pair_coeff  4   4   lj/cut/coul/long   0.0000000  1.00000
+
+pair_coeff  1   3   lj/cut/coul/long/soft  0.1553500  3.16600  ${lambda00}
+pair_coeff  2   3   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda00}
+
+pair_coeff  1   4   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda00}
+pair_coeff  2   4   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda00}
+
+fix 		fShakeSPCE all shake 0.0001 20 0 b 1 2 a 1 2
+
+timestep    1.0
+run_style   verlet
+
+fix         fxnpt all npt temp 300.0 300.0 100.0 iso 1.0 1.0 1000
+
+thermo_style    custom step etotal pe ecoul elong evdwl
+thermo_modify   format float %20.12f
+thermo		1
+
+rerun ${lambda00}.lammpstrj dump x y z box yes 
+
+set         type 3 charge ${q11}
+set         type 4 charge ${q21}
+
+pair_coeff  1   3   lj/cut/coul/long/soft  0.1553500  3.16600  ${lambda01}
+pair_coeff  2   3   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda01}
+
+pair_coeff  1   4   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda01}
+pair_coeff  2   4   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda01}
+
+rerun ${lambda00}.lammpstrj dump x y z box yes 
+
+set         type 3 charge ${q12}
+set         type 4 charge ${q22}
+
+pair_coeff  1   3   lj/cut/coul/long/soft  0.1553500  3.16600  ${lambda02}
+pair_coeff  2   3   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda02}
+
+pair_coeff  1   4   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda02}
+pair_coeff  2   4   lj/cut/coul/long/soft  0.0000000  1.00000  ${lambda02}
+
+rerun ${lambda00}.lammpstrj dump x y z box yes    
