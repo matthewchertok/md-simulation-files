@@ -9,9 +9,9 @@ Thermodynamic integration requires a numerical integration along a coupling para
 
 $\Delta F \approx \sum_{k=1}^N w_k\left\langle\frac{dU}{d\lambda}\right\rangle_{\lambda_k} $
 
-Here $N$ is the total number of points between 0 and 1 to perfrom the numerical integration, $\lambda_k$ and $w_k$ are the $\lambda$ position and coresponding weights. In this example, $N=12$ is used and I set the 12 $\lambda$ to a 12-point [Gaussian quadrature](https://en.wikipedia.org/wiki/Gaussian_quadrature). 
+Here $N$ is the total number of points between 0 and 1 to perfrom the numerical integration, $\lambda_k$ and $w_k$ are the $\lambda$ position and the coresponding weight. In this example, $N=12$ is used and the 12 $\lambda$ are set to 12 points of [Gaussian quadrature](https://en.wikipedia.org/wiki/Gaussian_quadrature). 
 
-To calculate the $\left\langle\frac{dU}{d\lambda}\right\rangle_{\lambda_k}$, we will do another numerical calculation
+To calculate the $\left\langle\frac{dU}{d\lambda}\right\rangle_{\lambda_k}$, we do another numerical calculation
 
 $\left\langle\frac{dU}{d\lambda}\right\rangle_{\lambda_k} \approx \left\langle\frac{U(\lambda+\delta)-U(\lambda-\delta)}{2\delta}\right\rangle_{\lambda_k}$
 
@@ -31,4 +31,4 @@ First perform all 12 ```b.in``` scripts to collect 12 trajectories at different 
 
 ### ```TI.py``` : The results analysis script
 
-Read in results from ```c.in``` and calculate the free energy from thermodynamic integration. Three numerical integrations are performed: $\sum_{k=1}^N w_k\left\langle\frac{U(\lambda+\delta)-U(\lambda-\delta)}{2\delta}\right\rangle_{\lambda_k}$, $\sum_{k=1}^N w_k\left\langle\frac{U(\lambda+\delta)-U(\lambda)}{\delta}\right\rangle_{\lambda_k}$, and $\sum_{k=1}^N w_k\left\langle\frac{U(\lambda)-U(\lambda-\delta)}{\delta}\right\rangle_{\lambda_k}$. These three integrations show give similar results. Large differences indicates the $\delta$ is too large. However, with smaller $\delta$, longer simulations is likely required to converage the results.
+Read in results from ```c.in``` and calculate the free energy from thermodynamic integration. Three numerical integrations are performed: $\sum_{k=1}^N w_k\left\langle\frac{U(\lambda+\delta)-U(\lambda-\delta)}{2\delta}\right\rangle_{\lambda_k}$, $\sum_{k=1}^N w_k\left\langle\frac{U(\lambda+\delta)-U(\lambda)}{\delta}\right\rangle_{\lambda_k}$, and $\sum_{k=1}^N w_k\left\langle\frac{U(\lambda)-U(\lambda-\delta)}{\delta}\right\rangle_{\lambda_k}$. These three integrations show give similar results.
