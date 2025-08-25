@@ -1,0 +1,195 @@
+# Force-field settings file generated on 2024-09-18 via gen_data.py, version 1 May 2020
+
+mass 31 15.9994
+mass 32 1.008
+mass 33 1.0e-100
+
+# ~~~~~Non-bonded~~~~~
+# e.g., pair_coeff type eps sig
+pair_coeff 1   1   0.17000  3.25000 
+pair_coeff 2   2   0.17000  3.30000 
+pair_coeff 3   3   0.06600  3.50000 
+pair_coeff 4   4   0.07000  3.55000 
+pair_coeff 5   5   0.06600  3.50000 
+pair_coeff 6   6   0.07000  3.55000 
+pair_coeff 7   7   0.10500  3.75000 
+pair_coeff 8   8   0.06600  3.50000 
+pair_coeff 9   9   0.06600  3.50000 
+pair_coeff 10  10  0.21000  2.96000 
+pair_coeff 11  11  0.06600  3.50000 
+pair_coeff 12  12  0.17000  3.25000 
+pair_coeff 13  13  0.06600  3.50000 
+pair_coeff 14  14  0.03000  2.50000 
+pair_coeff 15  15  0.03000  2.50000 
+pair_coeff 16  16  0.03000  2.42000 
+pair_coeff 17  17  0.10500  3.75000 
+pair_coeff 18  18  0.06200  3.25000 
+pair_coeff 19  19  0.22175  2.95000 
+pair_coeff 20  20  0.21000  2.96000 
+pair_coeff 21  21  0.25000  3.55000 
+pair_coeff 22  22  0.14006  2.90000 
+pair_coeff 23  23  0.20005  3.15000 
+pair_coeff 24  24  0.06597  3.50000 
+pair_coeff 25  25  0.06600  3.50000 
+pair_coeff 26  26  0.03011  2.50000 
+pair_coeff 27  27  0.03000  2.50000 
+pair_coeff 28  28  0.06600  3.50000 
+pair_coeff 29  29  0.03000  2.50000 
+pair_coeff 30  30  0.00280  3.33000 
+
+pair_coeff 31  31  0.1550   3.1536
+pair_coeff 32  32  0.0      1.0
+pair_coeff 33  33  0.0      1.0 
+
+# ~~~~~BONDS~~~~~
+# e.g., bond_coeff type k  r0 
+bond_coeff  1 harmonic  317.000  1.510
+bond_coeff  2 harmonic  339.986  1.090
+bond_coeff  3 harmonic  469.000  1.400
+bond_coeff  4 harmonic  382.003  1.448
+bond_coeff  5 harmonic  367.000  1.080
+bond_coeff  6 harmonic  339.986  1.090
+bond_coeff  7 harmonic  340.000  1.090
+bond_coeff  8 harmonic  339.986  1.090
+bond_coeff  9 harmonic  317.000  1.522
+bond_coeff 10 harmonic  340.000  1.090
+bond_coeff 11 harmonic  340.000  1.090
+bond_coeff 12 harmonic  490.000  1.335
+bond_coeff 13 harmonic  481.000  1.340
+bond_coeff 14 harmonic  267.925  1.529
+bond_coeff 15 harmonic  382.003  1.448
+bond_coeff 16 harmonic  337.000  1.449
+bond_coeff 17 harmonic  267.925  1.529
+bond_coeff 18 harmonic  469.000  1.400
+bond_coeff 19 harmonic  570.000  1.229
+bond_coeff 20 harmonic  317.000  1.510
+bond_coeff 21 harmonic  367.000  1.360
+bond_coeff 22 harmonic  317.000  1.522
+bond_coeff 23 harmonic  656.000  1.250
+bond_coeff 24 harmonic  340.000  1.090
+bond_coeff 25 harmonic  268.000  1.529
+bond_coeff 26 harmonic  637.070  1.455
+bond_coeff 27 harmonic  340.000  1.090
+bond_coeff 28 harmonic  268.000  1.529
+bond_coeff 29 harmonic  340.000  1.090
+bond_coeff 30 harmonic  213.862  1.633
+bond_coeff 31 harmonic  268.000  1.529
+bond_coeff 32 harmonic   89.129  1.402
+
+# ~~~~~ANGLES~~~~~
+# e.g., angle_coeff type k(kcal/mol/rad**2)  theta_0 (degrees)
+angle_coeff  1 harmonic   56.202 109.500
+angle_coeff  2 harmonic   37.500 110.700
+angle_coeff  3 harmonic   63.000 120.000
+angle_coeff  4 harmonic   35.002 109.500
+angle_coeff  5 harmonic   32.995 107.800
+angle_coeff  6 harmonic   63.000 120.000
+angle_coeff  7 harmonic   33.000 107.800
+angle_coeff  8 harmonic   50.000 116.000
+angle_coeff  9 harmonic   51.804 107.200
+angle_coeff 10 harmonic   35.000 109.500
+angle_coeff 11 harmonic   70.000 120.000
+angle_coeff 12 harmonic   70.000 120.000
+angle_coeff 13 harmonic   51.804 107.200
+angle_coeff 14 harmonic   35.000 120.000
+angle_coeff 15 harmonic   37.500 110.700
+angle_coeff 16 harmonic   50.000 121.900
+angle_coeff 17 harmonic   35.000 120.000
+angle_coeff 18 harmonic   35.002 109.500
+angle_coeff 19 harmonic   33.000 107.800
+angle_coeff 20 harmonic   80.000 120.400
+angle_coeff 21 harmonic   35.000 109.500
+angle_coeff 22 harmonic   37.500 110.700
+angle_coeff 23 harmonic   35.000 109.500
+angle_coeff 24 harmonic   63.000 111.100
+angle_coeff 25 harmonic   80.000 122.900
+angle_coeff 26 harmonic   35.000 109.500
+angle_coeff 27 harmonic   58.350 112.700
+angle_coeff 28 harmonic   70.000 120.000
+angle_coeff 29 harmonic   33.000 107.800
+angle_coeff 30 harmonic   32.995 107.800
+angle_coeff 31 harmonic   35.000 109.500
+angle_coeff 32 harmonic   37.500 110.700
+angle_coeff 33 harmonic   70.000 116.600
+angle_coeff 34 harmonic   63.000 120.000
+angle_coeff 35 harmonic   32.995 107.800
+angle_coeff 36 harmonic   50.000 118.000
+angle_coeff 37 harmonic   70.000 117.000
+angle_coeff 38 harmonic   77.000 109.100
+angle_coeff 39 harmonic   50.000 109.500
+angle_coeff 40 harmonic   80.000 126.000
+angle_coeff 41 harmonic   33.000 107.800
+angle_coeff 42 harmonic   37.500 110.700
+angle_coeff 43 harmonic   33.000 107.800
+angle_coeff 44 harmonic  115.798 114.000
+angle_coeff 45 harmonic   58.350 112.700
+angle_coeff 46 harmonic   91.491 107.800
+angle_coeff 47 harmonic   37.500 110.700
+angle_coeff 48 harmonic   58.350 112.700
+angle_coeff 49 harmonic   37.500 110.700
+angle_coeff 50 harmonic   58.401 109.700
+angle_coeff 51 harmonic   33.000 107.800
+angle_coeff 52 harmonic   37.500 110.700
+angle_coeff 53 harmonic   58.350 112.700
+angle_coeff 54 harmonic   37.500 110.700
+angle_coeff 55 harmonic  148.136 103.500
+angle_coeff 56 harmonic   35.911 116.600
+
+# ~~~~~DIHEDRALS~~~~~
+# e.g., dihedral_coeff type k(kcal/mol) n d weighting_factor
+dihedral_coeff    1 fourier  3    0.000   1    0.000    0.000   2  180.000    0.150   3    0.000 
+dihedral_coeff    2 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff    3 fourier  3    0.000   1    0.000    0.000   2  180.000    0.280   3    0.000 
+dihedral_coeff    4 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff    5 fourier  3    0.982   1    0.000    0.000   2  180.000    0.330   3    0.000 
+dihedral_coeff    6 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff    7 fourier  3    0.000   1    0.000    0.000   2  180.000   -0.070   3    0.000 
+dihedral_coeff    8 fourier  3    1.196   1    0.000   -0.337   2  180.000    0.275   3    0.000 
+dihedral_coeff    9 fourier  3    0.000   1    0.000    0.000   2  180.000    0.280   3    0.000 
+dihedral_coeff   10 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   11 fourier  3    0.208   1    0.000   -0.064   2  180.000    0.348   3    0.000 
+dihedral_coeff   12 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   13 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   14 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   15 fourier  1    0.000   1    0.000 
+dihedral_coeff   16 fourier  3    0.000   1    0.000    0.000   2  180.000    0.000   3    0.000 
+dihedral_coeff   17 fourier  3    0.000   1    0.000    0.000   2  180.000    0.280   3    0.000 
+dihedral_coeff   18 fourier  3    0.000   1    0.000    0.000   2  180.000    0.000   3    0.000 
+dihedral_coeff   19 fourier  3   -3.791   1    0.000    1.716   2  180.000    1.599   3    0.000 
+dihedral_coeff   20 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   21 fourier  3    0.000   1    0.000    0.000   2  180.000    0.150   3    0.000 
+dihedral_coeff   22 fourier  3    0.000   1    0.000    0.000   2  180.000    0.000   3    0.000 
+dihedral_coeff   23 fourier  3    0.000   1    0.000    0.000   2  180.000    0.150   3    0.000 
+dihedral_coeff   24 fourier  3    0.000   1    0.000    0.000   2  180.000    0.150   3    0.000 
+dihedral_coeff   25 fourier  1    0.000   1    0.000 
+dihedral_coeff   26 fourier  3    0.000   1    0.000    2.450   2  180.000    0.000   3    0.000 
+dihedral_coeff   27 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   28 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   29 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   30 fourier  3    2.377   1    0.000   -0.367   2  180.000    0.000   3    0.000 
+dihedral_coeff   31 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   32 fourier  3    0.000   1    0.000    3.625   2  180.000    0.000   3    0.000 
+dihedral_coeff   33 fourier  3   -0.698   1    0.000   -0.213   2  180.000    0.000   3    0.000 
+dihedral_coeff   34 fourier  3    0.982   1    0.000    0.000   2  180.000    0.330   3    0.000 
+dihedral_coeff   35 fourier  3    0.000   1    0.000    2.450   2  180.000    0.000   3    0.000 
+dihedral_coeff   36 fourier  3    0.000   1    0.000    0.000   2  180.000    0.000   3    0.000 
+dihedral_coeff   37 fourier  3    0.000   1    0.000    0.000   2  180.000    0.150   3    0.000 
+dihedral_coeff   38 fourier  3   -0.507   1    0.000   -0.355   2  180.000    0.236   3    0.000 
+dihedral_coeff   39 fourier  3    0.650   1    0.000   -0.025   2  180.000    0.100   3    0.000 
+dihedral_coeff   40 fourier  1    0.000   1    0.000 
+dihedral_coeff   41 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   42 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   43 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   44 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   45 fourier  3    0.000   1    0.000    0.000   2  180.000    0.297   3    0.000 
+dihedral_coeff   46 fourier  3    0.000   1    0.000    0.000   2  180.000    0.201   3    0.000 
+dihedral_coeff   47 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   48 fourier  3    0.525   1    0.000   -0.218   2  180.000    0.355   3    0.000 
+dihedral_coeff   49 fourier  4    3.311   1    0.000    0.474   2  180.000   -0.694   3    0.000   -1.059   4  180.000 
+dihedral_coeff   50 fourier  3    0.000   1    0.000    0.000   2  180.000    0.247   3    0.000 
+dihedral_coeff   51 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   52 fourier  4    3.311   1    0.000    0.474   2  180.000   -0.694   3    0.000   -1.059   4  180.000 
+dihedral_coeff   53 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 
+dihedral_coeff   54 fourier  3   -0.719   1    0.000   -0.372   2  180.000    0.179   3    0.000 
+dihedral_coeff   55 fourier  4    3.311   1    0.000    0.474   2  180.000   -0.694   3    0.000   -1.059   4  180.000 
+dihedral_coeff   56 fourier  3    0.000   1    0.000    0.000   2  180.000    0.300   3    0.000 

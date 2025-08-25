@@ -1,0 +1,85 @@
+#===========================================================
+# GENERAL PROCEDURES
+#===========================================================
+units		real	# g/mol, angstroms, fs, kcal/mol, K, atm, charge*angstrom
+dimension	3	    # 3 dimensional simulation
+newton		on	    # use Newton's 3rd law
+boundary	p p p	# periodic boundary conditions 
+atom_style	full    # molecular + charge
+
+#===========================================================
+# FORCE FIELD DEFINITION
+#===========================================================
+special_bonds  lj/coul 0.0 0.0 0.5
+pair_style     lj/cut/coul/long 12.0
+bond_style     hybrid harmonic morse            
+angle_style    hybrid harmonic           
+dihedral_style hybrid fourier 
+kspace_style   pppm 1e-4            # long-range electrostatics sum method
+improper_style none                 # no impropers
+pair_modify shift yes  mix geometric
+neigh_modify delay 0 every 1 check yes page 500000 one 50000
+
+#===========================================================
+# SETUP SIMULATIONS
+#===========================================================
+# READ IN COEFFICIENTS/COORDINATES/TOPOLOGY
+read_data  cage6.equil.data
+include    sys.settings
+ 
+# SET RUN PARAMETERS
+timestep	1.0		    # fs
+run_style	verlet 		# Velocity-Verlet integrator
+
+# DECLARE RELEVANT OUTPUT VARIABLES
+variable        my_step equal   step
+variable        my_temp equal   temp
+variable        my_rho  equal   density
+variable        my_pe   equal   pe
+variable        my_ebon equal   ebond
+variable        my_eang equal   eangle
+variable        my_edih equal   edihed
+variable        my_evdw equal   evdwl
+variable        my_eel  equal   (ecoul+elong)
+variable        my_ent  equal   enthalpy
+variable        my_P    equal   press
+variable        my_vol  equal   vol
+
+fix  averages all ave/time 100 200 20000 v_my_temp v_my_rho v_my_vol v_my_pe v_my_edih v_my_evdw v_my_eel v_my_ent v_my_P file thermo.avg
+
+# CREATE COORDINATE DUMPS
+group WATER type 31 32 33
+group NONWATER subtract all WATER
+group CAGE6 type 1:16
+group AROMATIC type 4
+
+#===========================================================
+# PRODUCTION 
+#===========================================================
+
+# Reset simulation after centering around MC3A.
+thermo_style    custom step temp vol press density enthalpy etotal pe ke
+thermo_modify   format float %14.6f
+thermo          1000
+
+dump crds NONWATER atom 2000 prod.lammpstrj
+dump_modify crds sort id
+dump_modify crds scale no
+
+restart 1000000 cage6.restart
+
+velocity all create 300 12345
+
+fix ICECUBE all momentum 1000 linear 1 1 1
+
+fix INTEGRATE WATER rigid/npt/small molecule temp 300.0 300.0 100.0 iso 1.0 1.0 1000.0
+fix NVT NONWATER nvt temp 300.0 300.0 100.0
+fix CENTER AROMATIC recenter 45.0 45.0 45.0
+
+run 50000000
+
+unfix CENTER
+unfix NVT
+unfix INTEGRATE
+
+write_data cage6.prod.data
